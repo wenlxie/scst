@@ -1,0 +1,8 @@
+Backend PID: 1936
+Device A: /dev/sg0; device B: /dev/sg1
+/dev/sg0: status=0x0 host_status=0x0 driver_status=0x0
+/dev/sg0: status=0x0 host_status=0x0 driver_status=0x0
+Confirmed: B holds A buffer while A handle is closed.
+A handler was removed; check state.log for release-thread status.
+Killing B handle.
+SCST_REPRO_CLEANUP_COMPLETE

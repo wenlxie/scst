@@ -1,0 +1,32 @@
+[  204.216350] [4372]: scst_user: Releasing dev repro_a
+[  204.216409] [4372]: scst: Removed LUN 0 from group scst_local_tgt (target scst_local_tgt)
+[  204.226404] [4372]: scst: Detached from virtual device repro_a (id 1)
+[  204.238427] [4372]: scst_user: Detached user space virtual device "repro_a"
+[  204.238446] [4372]: scst: Device handler "repro_a" unloaded
+[  232.033831] watchdog: BUG: soft lockup - CPU#6 stuck for 26s! [scst_usr_cleanu:4245]
+[  232.033841] Modules linked in: scst_local(OE) scst_user(OE) scst(OE) dlm udp_diag tcp_diag inet_diag nft_compat nft_chain_nat overlay xt_tcpudp xt_nat xt_multiport xt_mark xt_conntrack xt_comment xt_addrtype xt_MASQUERADE nf_tables ip6table_filter iptable_filter ip6table_nat iptable_nat nf_nat nf_conntrack nf_defrag_ipv6 nf_defrag_ipv4 ip6_tables veth bridge stp llc tap isofs binfmt_misc nls_iso8859_1 joydev input_leds sch_fq_codel dm_multipath efi_pstore nfnetlink dmi_sysfs virtiofs vmw_vsock_virtio_transport vmw_vsock_virtio_transport_common vsock ip_tables x_tables autofs4 btrfs blake2b_generic raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor xor_neon raid6_pq libcrc32c raid1 raid0 hid_generic usbhid hid crct10dif_ce polyval_ce polyval_generic ghash_ce sm4 sha3_ce sha2_ce sha256_arm64 sha1_ce xhci_pci xhci_pci_renesas virtio_rng aes_neon_bs aes_neon_blk aes_ce_blk aes_ce_cipher
+[  232.033895] CPU: 6 PID: 4245 Comm: scst_usr_cleanu Tainted: G           OE      6.8.0-142-generic #142-Ubuntu
+[  232.033896] Hardware name: Apple Inc. Apple Virtualization Generic Platform, BIOS 2075.140.4.0.0 07/20/2025
+[  232.033897] pstate: 41400005 (nZcv daif +PAN -UAO -TCO +DIT -SSBS BTYPE=--)
+[  232.033899] pc : __local_bh_enable_ip+0x40/0xe0
+[  232.033903] lr : _raw_spin_unlock_bh+0x2c/0x58
+[  232.033906] sp : ffff80008504bd00
+[  232.033906] x29: ffff80008504bd00 x28: 0000000000000000 x27: 0000000000000000
+[  232.033908] x26: ffff0000c90d31c0 x25: ffff0000c4b06780 x24: 0000000000000004
+[  232.033909] x23: ffff0000c4b06860 x22: ffff0000c4b067c0 x21: ffff0000c4b067f8
+[  232.033910] x20: 0000000000000004 x19: 0000000000000001 x18: ffff8000844e3028
+[  232.033911] x17: 0000000000000000 x16: 0000000000000000 x15: 0000000000000000
+[  232.033912] x14: 0000000000000000 x13: 0000000000000030 x12: 0101010101010101
+[  232.033913] x11: 0000000000000000 x10: 0000000000000000 x9 : ffff8000816ec15c
+[  232.033914] x8 : 0000000000000000 x7 : 0000000000000000 x6 : 0000000000000040
+[  232.033915] x5 : 0000000000000000 x4 : 0000000000000000 x3 : 0000000000000000
+[  232.033916] x2 : ffff0000c5f92280 x1 : 0000000000000201 x0 : 0000000000000001
+[  232.033917] Call trace:
+[  232.033918]  __local_bh_enable_ip+0x40/0xe0
+[  232.033919]  _raw_spin_unlock_bh+0x2c/0x58
+[  232.033921]  sgv_pool_flush+0xbc/0x150 [scst]
+[  232.033938]  dev_user_cleanup_thread+0x198/0x638 [scst_user]
+[  232.033940]  kthread+0xf8/0x110
+[  232.033941]  ret_from_fork+0x10/0x20
+[  234.246705] [4410]: scst_user: Releasing dev repro_b
+[  234.246720] [4410]: scst: Removed LUN 1 from group scst_local_tgt (target scst_local_tgt)

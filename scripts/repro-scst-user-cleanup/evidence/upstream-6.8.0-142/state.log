@@ -1,0 +1,27 @@
+=== after_a_handle_closed 2026-09-30T12:18:46-07:00 ===
+    PID STAT COMMAND         WCHAN
+   4245 D    scst_usr_cleanu msleep
+   4372 D    scst_usr_releas scst_unregister_virtual_device
+=== repro_a commands ===
+ucmd 000000004186ed7f (state 7, ref 1), sent_to_user 0, seen_by_user 1, aborted 0, jammed 0, scst_cmd 0000000000000000
+ucmd 00000000d1290333 (state 21, ref 1), sent_to_user 0, seen_by_user 0, aborted 0, jammed 0, scst_cmd 0000000000000000
+=== repro_b commands ===
+ucmd 00000000dfedac88 (state 5, ref 1), sent_to_user 0, seen_by_user 1, aborted 0, jammed 0, scst_cmd 0000000000000000
+ucmd 00000000f412d136 (state 3, ref 1), sent_to_user 1, seen_by_user 1, aborted 0, jammed 0, scst_cmd 000000008123c643
+=== before_b_handle_closed 2026-09-30T12:19:16-07:00 ===
+    PID STAT COMMAND         WCHAN
+   4245 R    scst_usr_cleanu -
+   4372 D    scst_usr_releas dev_user_exit_dev.isra.0
+=== repro_a commands unavailable ===
+=== repro_b commands ===
+ucmd 00000000dfedac88 (state 5, ref 1), sent_to_user 0, seen_by_user 1, aborted 0, jammed 0, scst_cmd 0000000000000000
+ucmd 00000000f412d136 (state 3, ref 1), sent_to_user 1, seen_by_user 1, aborted 0, jammed 0, scst_cmd 000000008123c643
+=== cleanup_timeout 2026-09-30T12:19:27-07:00 ===
+    PID STAT COMMAND         WCHAN
+   4245 R    scst_usr_cleanu -
+   4372 D    scst_usr_releas dev_user_exit_dev.isra.0
+   4410 D    scst_usr_releas msleep
+=== repro_a commands unavailable ===
+=== repro_b commands ===
+ucmd 00000000dfedac88 (state 5, ref 1), sent_to_user 0, seen_by_user 1, aborted 0, jammed 0, scst_cmd 0000000000000000
+ucmd 00000000f412d136 (state 3, ref 1), sent_to_user 1, seen_by_user 1, aborted 0, jammed 0, scst_cmd 000000008123c643

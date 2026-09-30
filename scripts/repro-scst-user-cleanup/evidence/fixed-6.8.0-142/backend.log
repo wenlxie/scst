@@ -1,0 +1,18 @@
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: Options:
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: 	NON-BLOCKING
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: 	Standard parse
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: 	Ignore on_free_cmd
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: 	Full memory reuse enabled
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: 	SGV shared
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: 	Disable clustered SGV pool
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: 	Using SCST_USER_REPLY_AND_GET_CMD
+/var/tmp/scst-user-fixed-279-142/fileio_tgt:
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: Virtual device "repro_a", path "/var/tmp/scst-user-fixed-279-142/a.img", size 2MB, block size 512, nblocks 4096, options:
+/var/tmp/scst-user-fixed-279-142/fileio_tgt:
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: Virtual device "repro_b", path "/var/tmp/scst-user-fixed-279-142/b.img", size 2MB, block size 512, nblocks 4096, options:
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: Session from initiator scst_local_host (target scst_local_tgt) attached (LUN 0, threads_num 0, rd_only 0, sess_h ffff0000f45083c0)
+/var/tmp/scst-user-fixed-279-142/fileio_tgt: Session from initiator scst_local_host (target scst_local_tgt) attached (LUN 1, threads_num 0, rd_only 0, sess_h ffff0000f450cec0)
+SCST_REPRO_A_BUFFER buffer=0xf32268003000
+SCST_REPRO_A_BUFFER buffer=0xf32268003000
+SCST_REPRO_B_HOLDS_A_BUFFER buffer=0xf32268003000
+SCST_REPRO_A_HANDLE_CLOSED buffer=0xf32268003000

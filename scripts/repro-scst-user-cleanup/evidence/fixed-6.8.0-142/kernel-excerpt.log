@@ -1,0 +1,14 @@
+[   52.888460] [2012]: scst_user: Releasing dev repro_a
+[   52.888510] [2012]: scst: Removed LUN 0 from group scst_local_tgt (target scst_local_tgt)
+[   52.896059] [2012]: scst: Detached from virtual device repro_a (id 1)
+[   52.906949] [2012]: scst_user: Detached user space virtual device "repro_a"
+[   52.906983] [2012]: scst: Device handler "repro_a" unloaded
+[   62.958963] [405]: scst: TM fn ABORT_TASK/0 (mcmd 0000000086b658b7, initiator scst_local_host, target scst_local_tgt)
+[   62.959231] [1883]: scst: cmd 00000000573a3494 (tag 131973, sn 4294967276) being executed/xmitted (state EXEC_WAIT, op READ(10), proc time 10 sec., timeout 60 sec.), deferring ABORT (cmd_done_wait_count 1, cmd_finish_wait_count 2, internal 0, mcmd fn 0 (mcmd 0000000086b658b7), initiator scst_local_host, target scst_local_tgt)
+[   82.941451] [2034]: scst_user: Releasing dev repro_b
+[   82.941479] [2034]: scst: Removed LUN 1 from group scst_local_tgt (target scst_local_tgt)
+[   82.969801] [1887]: scst: Aborted cmd 00000000573a3494 finished (tag 131973, ref 1)
+[   82.969857] [1883]: scst: TM fn 0 (mcmd 0000000086b658b7) finished, status -129
+[   83.054043] [2034]: scst: Detached from virtual device repro_b (id 2)
+[   83.060034] [2034]: scst_user: Detached user space virtual device "repro_b"
+[   83.060053] [2034]: scst: Device handler "repro_b" unloaded

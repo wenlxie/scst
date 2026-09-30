@@ -1,0 +1,20 @@
+=== after_a_handle_closed 2026-09-30T12:20:48-07:00 ===
+    PID STAT COMMAND         WCHAN
+   1887 D    scst_usr_cleanu msleep
+   2012 D    scst_usr_releas dev_user_exit_dev.isra.0
+=== repro_a commands unavailable ===
+=== repro_b commands ===
+ucmd 00000000c8ce7a9f (state 3, ref 1), sent_to_user 1, seen_by_user 1, aborted 0, jammed 0, scst_cmd 00000000573a3494
+=== before_b_handle_closed 2026-09-30T12:21:18-07:00 ===
+    PID STAT COMMAND         WCHAN
+   1887 D    scst_usr_cleanu msleep
+   2012 D    scst_usr_releas dev_user_exit_dev.isra.0
+=== repro_a commands unavailable ===
+=== repro_b commands ===
+ucmd 00000000c8ce7a9f (state 3, ref 1), sent_to_user 1, seen_by_user 1, aborted 0, jammed 0, scst_cmd 00000000573a3494
+ucmd 000000007a065c77 (state 8, ref 1), sent_to_user 0, seen_by_user 0, aborted 0, jammed 0, scst_cmd 0000000000000000
+=== cleanup_complete 2026-09-30T12:21:19-07:00 ===
+    PID STAT COMMAND         WCHAN
+   1887 S    scst_usr_cleanu dev_user_cleanup_thread
+=== repro_a commands unavailable ===
+=== repro_b commands unavailable ===
