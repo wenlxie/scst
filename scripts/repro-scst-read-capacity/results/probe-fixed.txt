@@ -1,0 +1,52 @@
+CAPACITY_PROBE BEGIN
+CAPACITY_PROBE shift input=0 expected=9 actual=9 PASS
+CAPACITY_PROBE shift input=512 expected=9 actual=9 PASS
+CAPACITY_PROBE shift input=4096 expected=12 actual=12 PASS
+CAPACITY_PROBE shift input=65536 expected=16 actual=16 PASS
+[10830]: scst: ***ERROR***: Wrong sector size 4
+CAPACITY_PROBE shift input=4 expected=-1 actual=-1 PASS
+[10830]: scst: ***ERROR***: Wrong sector size 809052976
+CAPACITY_PROBE shift input=809052976 expected=-1 actual=-1 PASS
+[10830]: scst: ***ERROR***: Wrong sector size 768
+CAPACITY_PROBE shift input=768 expected=-1 actual=-1 PASS
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+[10830]: scst: ***ERROR***: Wrong sector size 809052976
+[10830]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[10830]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY response
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+CAPACITY_PROBE rc=10 sg_cnt=2 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+[10830]: scst: ***ERROR***: Wrong sector size 809052976
+[10830]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
+CAPACITY_PROBE rc=10 sg_cnt=2 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[10830]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY response
+CAPACITY_PROBE rc=10 sg_cnt=2 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=512 observed=512 geometry=512 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+[10830]: scst: ***ERROR***: Wrong sector size 809052976
+[10830]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY(16) response
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[10830]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY(16) response
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+CAPACITY_PROBE rc=16 sg_cnt=2 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+[10830]: scst: ***ERROR***: Wrong sector size 809052976
+[10830]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY(16) response
+CAPACITY_PROBE rc=16 sg_cnt=2 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[10830]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY(16) response
+CAPACITY_PROBE rc=16 sg_cnt=2 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=512 observed=512 geometry=512 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+CAPACITY_PROBE tape=power_of_two block_size=512 fixed=1 rc=0 bufflen=1024 data_len=1536 out_bufflen=512 PASS
+CAPACITY_PROBE tape=non_power_of_two block_size=1536 fixed=1 rc=0 bufflen=3072 data_len=4608 out_bufflen=1536 PASS
+CAPACITY_PROBE tape=small_block block_size=80 fixed=1 rc=0 bufflen=160 data_len=240 out_bufflen=80 PASS
+CAPACITY_PROBE tape=variable block_size=0 fixed=0 rc=0 bufflen=1000 data_len=1000 out_bufflen=0 PASS
+[10830]: scst: ***WARNING***: bufflen 2, data_len 3 or out_bufflen 1 too large for device capacity_probe_tape (block size 0)
+CAPACITY_PROBE tape=zero_fixed block_size=0 fixed=1 rc=-22 bufflen=2 data_len=3 out_bufflen=1 PASS
+[10830]: scst: ***WARNING***: bufflen 1398102, data_len 1 or out_bufflen 0 too large for device capacity_probe_tape (block size 1536)
+CAPACITY_PROBE tape=bufflen_overflow block_size=1536 fixed=1 rc=-22 bufflen=1398102 data_len=1 out_bufflen=0 PASS
+CAPACITY_PROBE tape=bufflen_boundary block_size=1536 fixed=1 rc=0 bufflen=2147483136 data_len=1536 out_bufflen=0 PASS
+[10830]: scst: ***WARNING***: bufflen 1, data_len 1 or out_bufflen 4194304 too large for device capacity_probe_tape (block size 512)
+CAPACITY_PROBE tape=out_bufflen_overflow block_size=512 fixed=1 rc=-22 bufflen=1 data_len=1 out_bufflen=4194304 PASS
+[10830]: scst: ***WARNING***: bufflen 1, data_len 18014398509481984 or out_bufflen 0 too large for device capacity_probe_tape (block size 512)
+CAPACITY_PROBE tape=data_len_overflow block_size=512 fixed=1 rc=-22 bufflen=1 data_len=18014398509481984 out_bufflen=0 PASS
+CAPACITY_PROBE tape=data_len_boundary block_size=512 fixed=1 rc=0 bufflen=512 data_len=9223372036854775296 out_bufflen=0 PASS
+CAPACITY_PROBE SUMMARY tests=31 failed=0

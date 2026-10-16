@@ -1,0 +1,7 @@
+1 << 29 != 809052976
+[10588]: scst_user: real_io_disk: Changed block shift from 12 into 29 / 29
+[10588]: scst: ***WARNING***: bufflen 32, data_len 32 or out_bufflen 0 too large for device real_io_disk (block size 536870912)
+[10588]: scst_user: ***ERROR***: PARSE failed (ucmd 00000000dd97de92, rc -22)
+[10588]: scst: ***WARNING***: bufflen 32, data_len 32 or out_bufflen 0 too large for device real_io_disk (block size 536870912)
+[10588]: scst_user: ***ERROR***: PARSE failed (ucmd 00000000dd97de92, rc -22)
+[10588]: scst_user: real_io_disk: Changed block shift from 29 into 12 / 12

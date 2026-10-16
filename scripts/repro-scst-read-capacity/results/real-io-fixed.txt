@@ -1,0 +1,7 @@
+SCSI device: /dev/sg0
+REAL_IO fixed before write_rc=0 read_rc=0 cmp_rc=0
+REAL_IO fixed bad_capacity_rc=11
+REAL_IO fixed after_bad_capacity write_rc=0 read_rc=0 cmp_rc=0
+REAL_IO fixed after_recovery write_rc=0 read_rc=0 cmp_rc=0
+REAL_IO fixed injector_events=1 PASS
+REAL_IO fixed logs=/var/tmp/scst-read-capacity-real-io

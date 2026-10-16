@@ -1,0 +1,25 @@
+CAPACITY_PROBE BEGIN
+CAPACITY_PROBE shift input=0 expected=9 actual=9 PASS
+CAPACITY_PROBE shift input=512 expected=9 actual=9 PASS
+CAPACITY_PROBE shift input=4096 expected=12 actual=12 PASS
+CAPACITY_PROBE shift input=65536 expected=16 actual=16 PASS
+CAPACITY_PROBE shift input=4 expected=-1 actual=-1 PASS
+1 << 29 != 809052976
+WARNING: CPU: 5 PID: 10800 at /var/tmp/scst-pr2-base/scst/src/scst_lib.c:12447 scst_calc_block_shift+0x104/0x130 [scst]
+CAPACITY_PROBE shift input=809052976 expected=-1 actual=29 FAIL
+CAPACITY_PROBE shift input=768 expected=-1 actual=9 FAIL
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=809052976 observed=809052976 geometry=536870912 callbacks=1 unchanged=1 status=0x0 resp_len=8 FAIL
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x0 resp_len=8 FAIL
+CAPACITY_PROBE rc=10 sg_cnt=2 supplied=4096 observed=0 geometry=4096 callbacks=0 unchanged=0 status=0x0 resp_len=8 FAIL
+CAPACITY_PROBE rc=10 sg_cnt=2 supplied=809052976 observed=0 geometry=4096 callbacks=0 unchanged=0 status=0x0 resp_len=8 FAIL
+CAPACITY_PROBE rc=10 sg_cnt=2 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=0 status=0x0 resp_len=8 FAIL
+CAPACITY_PROBE rc=10 sg_cnt=1 supplied=512 observed=512 geometry=512 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=809052976 observed=809052976 geometry=536870912 callbacks=1 unchanged=1 status=0x0 resp_len=32 FAIL
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x0 resp_len=32 FAIL
+CAPACITY_PROBE rc=16 sg_cnt=2 supplied=4096 observed=0 geometry=4096 callbacks=0 unchanged=0 status=0x0 resp_len=32 FAIL
+CAPACITY_PROBE rc=16 sg_cnt=2 supplied=809052976 observed=0 geometry=4096 callbacks=0 unchanged=0 status=0x0 resp_len=32 FAIL
+CAPACITY_PROBE rc=16 sg_cnt=2 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=0 status=0x0 resp_len=32 FAIL
+CAPACITY_PROBE rc=16 sg_cnt=1 supplied=512 observed=512 geometry=512 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+CAPACITY_PROBE SUMMARY tests=21 failed=12

@@ -1,0 +1,1 @@
+[10706]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
