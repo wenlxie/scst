@@ -1,1 +1,58 @@
-[10706]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
+[18054.390269] [11039]: scst: User interface thread started
+[18054.391929] [11048]: scst: Init thread started
+[18054.392001] [11049]: scst: Task management thread started
+[18054.392065] [11038]: scst: Target template copy_manager registered successfully
+[18054.392076] [11050]: scst: Management thread started
+[18054.392078] [11038]: scst: Target copy_manager_tgt for template copy_manager registered successfully
+[18054.392080] [11038]: scst: Using security group "copy_manager_tgt" for initiator "copy_manager_sess" (target copy_manager_tgt)
+[18054.392095] [11038]: scst: SCST loaded successfully (global max mem for commands ignored, per device 1595MB)
+[18054.392096] [11038]: scst: SCST version: 3.11.0-pre
+[18054.392097] [11038]: scst: SCST build date: 
+[18054.392097] [11038]: scst: SCST build number: 
+[18054.392098] [11038]: scst: SCST git commit sha1: 
+[18054.392098] [11038]: scst: SCST kver: 
+[18054.392099] [11038]: scst: SCST arch type: 
+[18054.392100] [11038]: scst: SCST config: TRACING
+[18054.393910] [11051]: scst: Virtual device handler "scst_user" registered successfully
+[18054.394093] [11052]: scst_user: Cleanup thread started
+[18054.395523] [11055]: scst: Target template scst_local registered successfully
+[18054.395633] [11055]: scst: Target scst_local_tgt for template scst_local registered successfully
+[18054.395651] [11055]: scst: Using security group "scst_local_tgt" for initiator "scst_local_host" (target scst_local_tgt)
+[18054.395927] scsi host0: scst_local
+[18054.399622] [11062]: scst: Virtual device handler real_io_disk for type 0 registered successfully
+[18054.399647] [11062]: scst_user: Attached user space virtual device "real_io_disk"
+[18054.399656] [11062]: scst: Attached to virtual device real_io_disk (id 1)
+[18054.505519] [11039]: scst: Added device real_io_disk to group scst_local_tgt (LUN 0, flags 0x2) to target scst_local_tgt
+[18054.505879] scsi 0:0:0:0: Direct-Access     SCST_USR real_io_disk     3110 PQ: 0 ANSI: 6
+[18054.505889] [7625]: scst_local: Configuring queue depth 64 on sdev 00000000bee29c6c (tagged supported 1)
+[18054.507799] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[18054.507843] sd 0:0:0:0: Power-on or device reset occurred
+[18054.508055] sd 0:0:0:0: [sda] 8192 4096-byte logical blocks: (33.6 MB/32.0 MiB)
+[18054.508208] sd 0:0:0:0: [sda] Write Protect is off
+[18054.508214] sd 0:0:0:0: [sda] Mode Sense: 83 00 10 08
+[18054.508432] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[18054.508531] sd 0:0:0:0: [sda] Preferred minimum I/O size 4096 bytes
+[18054.508536] sd 0:0:0:0: [sda] Optimal transfer size 524288 bytes
+[18054.510259] sd 0:0:0:0: [sda] Attached SCSI disk
+[18054.615776] [11064]: scst: ***ERROR***: Wrong sector size 809052976
+[18054.615786] [11064]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
+[18054.626292] [11039]: scst: Removed LUN 0 from group scst_local_tgt (target scst_local_tgt)
+[18054.636489] [11116]: scst_user: Releasing dev real_io_disk
+[18054.636504] [11116]: scst: Detached from virtual device real_io_disk (id 1)
+[18054.647183] [11116]: scst_user: Detached user space virtual device "real_io_disk"
+[18054.647193] [11116]: scst: Device handler "real_io_disk" unloaded
+[18054.650112] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[18054.650121] sd 0:0:0:0: [sda] Synchronize Cache(10) failed: Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
+[18054.704065] [11117]: scst: Target scst_local_tgt for template scst_local unregistered successfully
+[18054.704178] [11117]: scst: Target template scst_local unregistered successfully
+[18054.837424] [11052]: scst_user: Cleanup thread finished
+[18054.837747] [11124]: scst: Device handler "scst_user" unloaded
+[18054.906950] [11125]: scst: Target copy_manager_tgt for template copy_manager unregistered successfully
+[18054.907417] [11125]: scst: Target template copy_manager unregistered successfully
+[18054.909456] [11049]: scst: Task management thread finished
+[18054.909517] [11050]: scst: Management thread finished
+[18054.909605] [11048]: scst: Init thread finished
+[18055.080990] [11125]: scst: Exiting SCST sysfs hierarchy...
+[18058.146251] [11039]: scst: User interface thread finished
+[18058.146325] [11125]: scst: Exiting SCST sysfs hierarchy done
+[18058.160071] [11125]: scst: SCST unloaded

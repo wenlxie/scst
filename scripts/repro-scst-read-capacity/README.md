@@ -90,12 +90,17 @@ Environment (`results/environment.txt`): Ubuntu 24.04.4 LTS, aarch64, kernel
 6.8.0-142-generic, gcc 13.3.0, `2release` builds. "Unpatched" is upstream
 `master` at 21567d8c; "patched" is that commit plus the three commits above.
 
+The `*-dmesg.txt` files are the complete kernel logs of each run, from module
+load to unload. Only the unrelated `Modules linked in:` list, the
+`Hardware name:` line and the CPU register dump were removed from the
+`WARNING` traces in the unpatched runs.
+
 ### Test 1
 
-| Tree | Summary | Log |
+| Tree | Summary | Kernel log |
 | --- | --- | --- |
-| Unpatched (`test_tape=0`) | `tests=21 failed=12` | [`results/probe-base.txt`](results/probe-base.txt) |
-| Patched | `tests=31 failed=0` | [`results/probe-fixed.txt`](results/probe-fixed.txt) |
+| Unpatched (`test_tape=0`) | `tests=21 failed=12` | [`results/probe-base-dmesg.txt`](results/probe-base-dmesg.txt) |
+| Patched | `tests=31 failed=0` | [`results/probe-fixed-dmesg.txt`](results/probe-fixed-dmesg.txt) |
 
 Failures on the unpatched tree:
 
@@ -121,21 +126,38 @@ sizes are block size × count with overflows rejected.
 | I/O after the bad reply | write `rc=22`, read `rc=22`, compare fails | write, read, compare OK |
 | I/O after a normal READ CAPACITY | write, read, compare OK | write, read, compare OK |
 
-Kernel log, unpatched ([`results/real-io-base-dmesg.txt`](results/real-io-base-dmesg.txt)):
+Kernel log excerpt, unpatched ([full log](results/real-io-base-dmesg.txt)):
 
 ```text
-1 << 29 != 809052976
-scst_user: real_io_disk: Changed block shift from 12 into 29 / 29
-scst: ***WARNING***: bufflen 32, data_len 32 or out_bufflen 0 too large for device real_io_disk (block size 536870912)
-scst_user: ***ERROR***: PARSE failed (ucmd ..., rc -22)
-scst_user: real_io_disk: Changed block shift from 29 into 12 / 12
+[18049.762014] 1 << 29 != 809052976
+[18049.762026] WARNING: CPU: 5 PID: 10955 at /var/tmp/scst-pr2-base/scst/src/scst_lib.c:12447 scst_calc_block_shift+0x104/0x130 [scst]
+[18049.762132] CPU: 5 PID: 10955 Comm: fileio_tgt Tainted: G        W  OE      6.8.0-142-generic #142-Ubuntu
+[18049.762181] Call trace:
+[18049.762183]  scst_calc_block_shift+0x104/0x130 [scst]
+[18049.762198]  scst_block_generic_dev_done+0x11c/0x180 [scst]
+[18049.762213]  dev_user_disk_done+0x24/0x48 [scst_user]
+[18049.762217]  scst_process_active_cmd+0x88c/0x27b8 [scst]
+[18049.762234]  scst_process_redirect_cmd+0x4c/0x280 [scst]
+[18049.762271]  scst_cmd_done_local+0x90/0x158 [scst]
+[18049.762287]  dev_user_process_reply+0x1b0/0x1178 [scst_user]
+[18049.762288]  dev_user_ioctl+0x38c/0x10f0 [scst_user]
+...
+[18049.762315] [10955]: scst_user: real_io_disk: Changed block shift from 12 into 29 / 29
+[18049.763692] [10955]: scst: ***WARNING***: bufflen 32, data_len 32 or out_bufflen 0 too large for device real_io_disk (block size 536870912)
+[18049.763701] [10955]: scst_user: ***ERROR***: PARSE failed (ucmd 00000000ccdf9c41, rc -22)
+[18049.764886] [10955]: scst: ***WARNING***: bufflen 32, data_len 32 or out_bufflen 0 too large for device real_io_disk (block size 536870912)
+[18049.764897] [10955]: scst_user: ***ERROR***: PARSE failed (ucmd 00000000ef816a5b, rc -22)
+[18049.767052] [10955]: scst_user: real_io_disk: Changed block shift from 29 into 12 / 12
 ```
 
-Kernel log, patched ([`results/real-io-fixed-dmesg.txt`](results/real-io-fixed-dmesg.txt)):
+Kernel log excerpt, patched ([full log](results/real-io-fixed-dmesg.txt)):
 
 ```text
-scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
+[18054.615786] [11064]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
 ```
 
 Script output: [`results/real-io-base.txt`](results/real-io-base.txt),
-[`results/real-io-fixed.txt`](results/real-io-fixed.txt).
+[`results/real-io-fixed.txt`](results/real-io-fixed.txt). The test tools'
+own logs (`fileio_tgt`, `sg_readcap`, `sg_dd`, `cmp`) for each step are in
+[`results/real-io-base-logs/`](results/real-io-base-logs/) and
+[`results/real-io-fixed-logs/`](results/real-io-fixed-logs/).

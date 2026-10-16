@@ -1,0 +1,2 @@
+READ CAPACITY (10) failed: Aborted command
+sg_readcap failed: Aborted command

@@ -1,0 +1,8 @@
+writing: SCSI status: Check Condition 
+Fixed format, current; Sense key: Illegal Request
+Additional sense: Logical block address out of range
+sg_write failed, seek=10
+Some error occurred,  remaining block count=32
+32+0 records in
+0+0 records out
+1 unrecovered error(s)

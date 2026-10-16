@@ -1,0 +1,5 @@
+Read Capacity results:
+   Last LBA=8191 (0x1fff), Number of logical blocks=8192
+   Logical block length=809052976 bytes
+Hence:
+   Device size: 6627761979392 bytes, 6320726.4 MiB, 6627.76 GB, 6.63 TB

@@ -1,0 +1,5 @@
+sg_read failed, at or after lba=10 [0xa]
+Some error occurred,  remaining block count=32
+0+0 records in
+0+0 records out
+1 unrecovered error(s)

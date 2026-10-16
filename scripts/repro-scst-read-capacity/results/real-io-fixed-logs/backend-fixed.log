@@ -1,0 +1,12 @@
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: block_size 1000 (4096)
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: Options:
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: 	Standard parse
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: 	Call on_free_cmd
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: 	Memory reuse disabled
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: 	Using unaligned buffers
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: 	Using SCST_USER_REPLY_AND_GET_CMD
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt:  
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: Virtual device "real_io_disk", path "/var/tmp/scst-read-capacity-real-io/backing.img", size 32MB, block size 4096, nblocks 8192, options:
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: Session from initiator scst_local_host (target scst_local_tgt) attached (LUN 0, threads_num 0, rd_only 0, sess_h ffff0000cbc49a40)
+CAPACITY_REAL_IO_INJECT handle=109 opcode=0x25 block_size=809052976
+/var/tmp/scst-pr2/usr/fileio/fileio_tgt: Session detached (sess_h ffff0000cbc49a40)

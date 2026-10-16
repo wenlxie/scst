@@ -1,0 +1,92 @@
+[18044.110835] [10892]: scst: User interface thread started
+[18044.112871] [10901]: scst: Init thread started
+[18044.112945] [10902]: scst: Task management thread started
+[18044.113001] [10891]: scst: Target template copy_manager registered successfully
+[18044.113015] [10903]: scst: Management thread started
+[18044.113022] [10891]: scst: Target copy_manager_tgt for template copy_manager registered successfully
+[18044.113024] [10891]: scst: Using security group "copy_manager_tgt" for initiator "copy_manager_sess" (target copy_manager_tgt)
+[18044.113042] [10891]: scst: SCST loaded successfully (global max mem for commands ignored, per device 1595MB)
+[18044.113043] [10891]: scst: SCST version: 3.11.0-pre
+[18044.113043] [10891]: scst: SCST build date: 
+[18044.113046] [10891]: scst: SCST build number: 
+[18044.113047] [10891]: scst: SCST git commit sha1: 
+[18044.113048] [10891]: scst: SCST kver: 
+[18044.113048] [10891]: scst: SCST arch type: 
+[18044.113049] [10891]: scst: SCST config: TRACING
+[18044.122046] [10905]: scst: Device handler "dev_tape" for type 1 registered successfully
+[18044.122050] [10905]: scst: Device handler "dev_tape_perf" for type 1 registered successfully
+[18044.129903] CAPACITY_PROBE BEGIN
+[18044.129904] CAPACITY_PROBE shift input=0 expected=9 actual=9 PASS
+[18044.129905] CAPACITY_PROBE shift input=512 expected=9 actual=9 PASS
+[18044.129906] CAPACITY_PROBE shift input=4096 expected=12 actual=12 PASS
+[18044.129907] CAPACITY_PROBE shift input=65536 expected=16 actual=16 PASS
+[18044.129908] [10908]: scst: ***ERROR***: Wrong sector size 4
+[18044.129912] CAPACITY_PROBE shift input=4 expected=-1 actual=-1 PASS
+[18044.129913] [10908]: scst: ***ERROR***: Wrong sector size 809052976
+[18044.129915] CAPACITY_PROBE shift input=809052976 expected=-1 actual=-1 PASS
+[18044.129916] [10908]: scst: ***ERROR***: Wrong sector size 768
+[18044.129917] CAPACITY_PROBE shift input=768 expected=-1 actual=-1 PASS
+[18044.129918] CAPACITY_PROBE rc=10 sg_cnt=1 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+[18044.129921] [10908]: scst: ***ERROR***: Wrong sector size 809052976
+[18044.129922] [10908]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
+[18044.129925] CAPACITY_PROBE rc=10 sg_cnt=1 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129927] [10908]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY response
+[18044.129928] CAPACITY_PROBE rc=10 sg_cnt=1 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129932] CAPACITY_PROBE rc=10 sg_cnt=2 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+[18044.129934] [10908]: scst: ***ERROR***: Wrong sector size 809052976
+[18044.129936] [10908]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY response
+[18044.129937] CAPACITY_PROBE rc=10 sg_cnt=2 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129941] [10908]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY response
+[18044.129942] CAPACITY_PROBE rc=10 sg_cnt=2 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129944] CAPACITY_PROBE rc=10 sg_cnt=1 supplied=512 observed=512 geometry=512 callbacks=1 unchanged=1 status=0x0 resp_len=8 PASS
+[18044.129945] CAPACITY_PROBE rc=16 sg_cnt=1 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+[18044.129946] [10908]: scst: ***ERROR***: Wrong sector size 809052976
+[18044.129948] [10908]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY(16) response
+[18044.129949] CAPACITY_PROBE rc=16 sg_cnt=1 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129951] [10908]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY(16) response
+[18044.129952] CAPACITY_PROBE rc=16 sg_cnt=1 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129958] CAPACITY_PROBE rc=16 sg_cnt=2 supplied=4096 observed=4096 geometry=4096 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+[18044.129960] [10908]: scst: ***ERROR***: Wrong sector size 809052976
+[18044.129961] [10908]: scst: ***ERROR***: Invalid sector size 809052976 in READ CAPACITY(16) response
+[18044.129963] CAPACITY_PROBE rc=16 sg_cnt=2 supplied=809052976 observed=809052976 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129965] [10908]: scst: ***ERROR***: Invalid sector size 0 in READ CAPACITY(16) response
+[18044.129967] CAPACITY_PROBE rc=16 sg_cnt=2 supplied=0 observed=0 geometry=4096 callbacks=0 unchanged=1 status=0x2 resp_len=0 PASS
+[18044.129968] CAPACITY_PROBE rc=16 sg_cnt=1 supplied=512 observed=512 geometry=512 callbacks=1 unchanged=1 status=0x0 resp_len=32 PASS
+[18044.129969] CAPACITY_PROBE tape=power_of_two block_size=512 fixed=1 rc=0 bufflen=1024 data_len=1536 out_bufflen=512 PASS
+[18044.129971] CAPACITY_PROBE tape=non_power_of_two block_size=1536 fixed=1 rc=0 bufflen=3072 data_len=4608 out_bufflen=1536 PASS
+[18044.129972] CAPACITY_PROBE tape=small_block block_size=80 fixed=1 rc=0 bufflen=160 data_len=240 out_bufflen=80 PASS
+[18044.129973] CAPACITY_PROBE tape=variable block_size=0 fixed=0 rc=0 bufflen=1000 data_len=1000 out_bufflen=0 PASS
+[18044.129975] [10908]: scst: ***WARNING***: bufflen 2, data_len 3 or out_bufflen 1 too large for device capacity_probe_tape (block size 0)
+[18044.129976] CDB:
+[18044.129976]  (h)___0__1__2__3__4__5__6__7__8__9__A__B__C__D__E__F
+[18044.129977]    0: 08 01 00 00 00 00   ......
+[18044.129978] CAPACITY_PROBE tape=zero_fixed block_size=0 fixed=1 rc=-22 bufflen=2 data_len=3 out_bufflen=1 PASS
+[18044.129979] [10908]: scst: ***WARNING***: bufflen 1398102, data_len 1 or out_bufflen 0 too large for device capacity_probe_tape (block size 1536)
+[18044.129980] CDB:
+[18044.129981]  (h)___0__1__2__3__4__5__6__7__8__9__A__B__C__D__E__F
+[18044.129981]    0: 08 01 00 00 00 00   ......
+[18044.129992] CAPACITY_PROBE tape=bufflen_overflow block_size=1536 fixed=1 rc=-22 bufflen=1398102 data_len=1 out_bufflen=0 PASS
+[18044.129993] CAPACITY_PROBE tape=bufflen_boundary block_size=1536 fixed=1 rc=0 bufflen=2147483136 data_len=1536 out_bufflen=0 PASS
+[18044.129994] [10908]: scst: ***WARNING***: bufflen 1, data_len 1 or out_bufflen 4194304 too large for device capacity_probe_tape (block size 512)
+[18044.129995] CDB:
+[18044.129995]  (h)___0__1__2__3__4__5__6__7__8__9__A__B__C__D__E__F
+[18044.129996]    0: 08 01 00 00 00 00   ......
+[18044.129996] CAPACITY_PROBE tape=out_bufflen_overflow block_size=512 fixed=1 rc=-22 bufflen=1 data_len=1 out_bufflen=4194304 PASS
+[18044.129997] [10908]: scst: ***WARNING***: bufflen 1, data_len 18014398509481984 or out_bufflen 0 too large for device capacity_probe_tape (block size 512)
+[18044.129998] CDB:
+[18044.129999]  (h)___0__1__2__3__4__5__6__7__8__9__A__B__C__D__E__F
+[18044.130000]    0: 08 01 00 00 00 00   ......
+[18044.130000] CAPACITY_PROBE tape=data_len_overflow block_size=512 fixed=1 rc=-22 bufflen=1 data_len=18014398509481984 out_bufflen=0 PASS
+[18044.130001] CAPACITY_PROBE tape=data_len_boundary block_size=512 fixed=1 rc=0 bufflen=512 data_len=9223372036854775296 out_bufflen=0 PASS
+[18044.130002] CAPACITY_PROBE SUMMARY tests=31 failed=0
+[18045.186145] [10911]: scst: Device handler "dev_tape_perf" for type 1 unloaded
+[18045.198215] [10911]: scst: Device handler "dev_tape" for type 1 unloaded
+[18045.243042] [10911]: scst: Target copy_manager_tgt for template copy_manager unregistered successfully
+[18045.243062] [10911]: scst: Target template copy_manager unregistered successfully
+[18045.244006] [10902]: scst: Task management thread finished
+[18045.244125] [10903]: scst: Management thread finished
+[18045.244238] [10901]: scst: Init thread finished
+[18045.420584] [10911]: scst: Exiting SCST sysfs hierarchy...
+[18048.430785] [10892]: scst: User interface thread finished
+[18048.431087] [10911]: scst: Exiting SCST sysfs hierarchy done
+[18048.443848] [10911]: scst: SCST unloaded
