@@ -1,0 +1,12 @@
+== 1. READ CAPACITY before fork
+   Last LBA=8191 (0x1fff), Number of logical blocks=8192
+   Logical block length=4096 bytes
+== 2. READ block 0 (puts 'SCSTDATA...' into the cached buffer page)
+1+0 records out
+== 3. (control) no fork
+== 4. READ CAPACITY
+   Last LBA=8191 (0x1fff), Number of logical blocks=8192
+   Logical block length=4096 bytes
+== kernel log
+(nothing)
+RESULT: OK (block length 4096)

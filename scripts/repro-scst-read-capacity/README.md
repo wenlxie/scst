@@ -6,12 +6,19 @@ Tests and results for
 1. `scst_tape: Size fixed-block transfers by the actual block size`
 2. `scst_lib: Read split READ CAPACITY responses before parsing them`
 3. `scst_lib: Reject invalid block lengths in READ CAPACITY responses`
+4. `scst_user: Pin cached user buffers so they survive fork()`
 
 The original failure: a user-space backend returned a READ CAPACITY response
 whose block length field held 809052976 (`0x30392b30`). SCST logged
 `1 << 29 != 809052976` from `scst_calc_block_shift()`, switched the device to
 536870912-byte blocks, and failed the following READ and WRITE commands in
 PARSE until another READ CAPACITY restored the block size.
+
+The cause was found later: the backend had forked (its crash handler writes a
+minidump from a cloned child), and scst_user's cached buffer pages, taken with
+`get_user_pages()`, no longer matched the backend's pages after the fork. The
+reproduction with upstream's `fileio_tgt` and the results for commit 4 are in
+[`fork/`](fork/README.md). Tests 1 and 2 below cover commits 1-3.
 
 Run everything in a disposable VM: the tests load and unload SCST modules.
 

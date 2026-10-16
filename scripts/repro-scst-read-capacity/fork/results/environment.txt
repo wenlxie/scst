@@ -1,0 +1,4 @@
+6.8.0-142-generic
+aarch64
+Ubuntu 24.04.4 LTS
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0

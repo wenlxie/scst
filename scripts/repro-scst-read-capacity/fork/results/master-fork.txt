@@ -1,0 +1,14 @@
+== 1. READ CAPACITY before fork
+   Last LBA=8191 (0x1fff), Number of logical blocks=8192
+   Logical block length=4096 bytes
+== 2. READ block 0 (puts 'SCSTDATA...' into the cached buffer page)
+1+0 records out
+== 3. fork() inside fileio_tgt (child only sleeps)
+FORK_ONCE child=31758
+== 4. READ CAPACITY
+   Last LBA=1396921172 (0x53435354), Number of logical blocks=1396921173
+   Logical block length=1145132097 bytes
+== kernel log
+[60778.106665] 1 << 30 != 1145132097
+[60778.107217] [31719]: scst_user: forkdisk: Changed block shift from 12 into 30 / 30
+RESULT: BUG REPRODUCED (stale page returned after fork)
